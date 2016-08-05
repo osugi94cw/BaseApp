@@ -1,56 +1,33 @@
 /**/
 
+/* 画面全体 */
 #page{
     width: 100%;
     height: 100%;
     background-color: #f8f8f8;
 }
 
+/* ヘッダー領域 */
+
+/* 全体 */
 header{
     width: 100%;
     height: 80px;
     text-align: center;
     line-height: 80px;
-    font-size: 30px;
     background-color: white;
     
     margin-bottom: 20px;
 }
+/* タイトル */
+header label.title{
+        font-size: 30px;
+}
 
+/* 更新履歴領域 */
+
+/* 全体 */
 section#notice_area{
-    width: 100%;
-    height: 216px;
-    background-color: white;
-    
-    margin-bottom: 40px;
-}
-
-p.text{
-    text-align: left;
-}
-
-#notice_area div.history{
-    width: 100%;
-    height: 35px;
-    
-    text-align: center;
-    line-height: 40px;
-    
-    margin-bottom: 5px;
-    
-    
-    background-color: white;
-}
-
-
-#notice_area label.date{
-    margin-left: 60px; 
-}
-#notice_area label.content{
-    margin-left: 80px; 
-}
-
-section#button_area{
     width: 100%;
     height: 250px;
     background-color: white;
@@ -58,61 +35,87 @@ section#button_area{
     margin-bottom: 20px;
 }
 
-#button_area section.a{
+/* 更新履歴タイトル */
+#notice_area div.title{
     width: 100%;
-    height: 125px;
-}
-#button_area section.b{
-    width: 100%;
-    height: 125px;
-}
-
-#button_area div.title{
-    width: 100%;
-    height: 40px;
+    height: 35px;
+    
     text-align: center;
     line-height: 40px;
+    margin-bottom: 5px;
+    
+    background-color: white;
+}
+
+/* リストの項目 */
+#notice_area ons-list-item{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    
+}
+
+/* 日付・更新内容の列 */
+#notice_area ons-row ons-col:nth-of-type(2){
+    margin-left: 20px;
+}
+
+/* 日付 */
+#notice_area label.date{
+    font-size: 12px;
+    line-height: 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* 更新内容 */
+#notice_area p.content{
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* ライブラリーボタン領域 */
+
+/* 全体 */
+section#button_area{
+    width: 100%;
+    height: 250px;
+    background-color: white;
+    
+    margin-bottom: 10px;
+}
+
+/* 見出し部分 */
+#button_area div.title{
+    width: 99%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
     
     border: solid 1px;
     
     background-color: white;
 }
 
-div.c_button{
-    height: 83px;
-    line-height: 83px;
-    margin: 0 20px;
-    
-    background: white;
-    display: box;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -o-box;
-    display: -ms-box;
-    box-pack: justify;
-    -moz-box-pack: justify;
-    -webkit-box-pack: justify;
-    -o-box-pack: justify;
-    -ms-box-pack: justify; 
-
-}
-
-.c_button > div{
-    display: block;
-}
-
-.c_button div:nth-of-type(1){
-    margin-left: 20px;
-}
-.c_button div:nth-of-type(4){
-    margin-right: 20px;
-}
-.c_button > div > ons-button{
+/* ボタンを表示する行 */
+#button_area ons-row{
     text-align: center;
-    height: 80px;
-    color: black;
-    background: white;
+    line-height: 90px;
 }
-.c_button > div > ons-button > img{
+
+/* ボタン内の画像 */
+#button_area ons-button > img{
     vertical-align: bottom;
+    margin-bottom: 0;
+}
+
+/* ons-buttonのデザイン変更 */ 
+.button--lib{
+    background: none;
+    color: black;
+    height: 90px;
+}
+.button--lib:active {
+  background-color: white;
 }
