@@ -1,0 +1,188 @@
+<link rel="stylesheet" href="css/menu.css">
+<script src="js/menu.js"></script>
+
+<ons-page>
+    <!-- メニュー画面 -->
+        <!-- <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Back</ons-back-button>
+          </div>
+          <div class="center">Navigation</div>
+        </ons-toolbar> -->
+        
+        
+        <!-- ページ全体のCSSを設定するためのsection -->
+        <section id="page">
+            
+            
+            <!-- ヘッダー領域 -->
+            <header>
+                <label class="title">タイトル</label>
+            </header>
+            
+            
+            <!-- コンテンツ領域1 -->
+            <section id="contents_area_1">
+            
+            <style>/* 更新履歴はここには表示しなくなったため、コメントアウトする。　他の画面ができ次第移動する。
+                <!-- タイトル部分 -->
+                <div class="title">
+                    更新履歴
+                </div>
+                
+                <!-- リスト部分 -->
+                <div class="list">
+                <ons-list>
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col>
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                    
+                    <ons-list-item modifier="chevron">
+                        <ons-row>
+                            <ons-col width="40px"> <!-- アイコンの列 CSSではwidthの指定が効かなかった -->
+                                <img src="img/category_icon.png" alt=""/>
+                            </ons-col>
+                            <ons-col><!-- 日付・更新履歴の列 -->
+                                <label class="date">日付</label>
+                                <p class="content">更新内容</p>
+                            </ons-col>
+                        </ons-row>
+                    </ons-list-item>
+                </ons-list>
+                </div>
+                */</style>
+                
+            </section>
+            
+            
+            <!-- コンテンツ領域2 -->
+            
+            <section id="contents_area_2" ng-controller="ButtonController">
+            
+                <!-- 見出しa -->
+                <section class="a">
+                
+                    <!-- 見出し部分 -->
+                    <div class="title">　
+                        見出しa
+                    </div>
+                    
+                    <!-- ボタン部分 -->
+                    <ons-row>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonA.png" alt="" /><br>A</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonB.png" alt="" /><br>B</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonC.png" alt="" /><br>C</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonD.png" alt="" /><br>D</ons-button>
+                        </ons-col>
+                    </ons-row>       
+                </section>
+                
+                <!-- 見出しb -->
+                <section class="b">
+                
+                    <!-- 見出し部分 -->
+                    <div class="title">
+                        見出しb
+                    </div>
+                    
+                    
+                        
+                    <!-- ボタン部分 -->
+                    <ons-row>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="test()"><img src="img/menu/buttonE.png" alt="" /><br>E</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonF.png" alt="" /><br>F</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib"><img src="img/menu/buttonG.png" alt="" /><br>G</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="alert()"><img src="img/menu/buttonH.png" alt="" /><br>H</ons-button>
+                        </ons-col>
+                    </ons-row>
+                    
+                    </style>
+                    
+                </section>
+                
+            </section>
+        
+        </section>
+</ons-page>
