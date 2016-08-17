@@ -1,91 +1,199 @@
 /* This is a CSS file */
 
-/* 画面全体 */
-section#page{
-    width: 100%;
-    height: 98%;
-    background-color: white;
-}
 
-/* コンテンツ領域1 */
-
-/* 全体 */
-section#contents_area_1{
-    width: 100%;
-    height: 45%;
-    text-align: center;
+/* 縦画面 */
+@media screen and (max-width: 380px) {
     
-    margin-top: 3%;
-}
-
-/* タイトル画像の領域 */
-#contents_area_1 ons-row.title_picture{
-    width: 100%;
-    height: 77%; 
-    margin-bottom: 3%;
-}
-
-/* タイトル画像*/
-#contents_area_1 ons-row.title_picture img{
-    width: 100%;
-    height: 100%;
-}
-
-/* 概要 */
-#contents_area_1 ons-row.overview{
-    width: 90%;
     
-    margin-right: 5%;
-    margin-left: 5%;
-}
+    /* 画面全体 */
+    section#page{
+        width: 100%;
+        height: 100%;
+        background-color: white;   
+    }
 
 
-/* コンテンツ領域2 */
-
-/* 全体 */
-section#contents_area_2{
-    width: 90%;
-    height: 46.5%;
-    text-align: center;
+    /* コンテンツ領域1 */
     
-    overflow-y: scroll;
+    /* 全体 */
+    section#contents_area_1{
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
     
-    padding: 5%;
-    margin-top: 3%;
+    /* タイトル画像の領域 */
+    #contents_area_1 ons-row.title_picture{
+        width: 100%;
+        height: 70%; 
+        margin-bottom: 8%;
+    }
+    
+    /* タイトル画像*/
+        #contents_area_1 ons-row.title_picture img{  
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    
+    /* 概要 */
+    #contents_area_1 ons-row.overview{
+        width: 90%;
+        height: auto;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    
+    
+    /* コンテンツ領域2 */
+    
+    /* 全体 */
+    section#contents_area_2{
+        width: 100%;
+        height: 55%;
+        text-align: center;
+    }
+    
+    /* コンテンツリスト */
+    #contents_area_2 div.contents_list{
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 100%;
+        overflow-y: auto;
+        
+    }
+    
+    /* リストアイテム */
+    #contents_area_2 div.contents_list ons-row.list_item{
+        width: 98%;
+        height: 70px;
+        border: solid 1px black;
+        text-align: left;
+        margin-bottom: 2%;
+    }
+    
+    /* リストアイテム内の画像の領域 */
+    #contents_area_2 div.contents_list ons-col.picture{
+        width: 50%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の画像 */
+    #contents_area_2 div.contents_list ons-col.picture img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の見出しの領域 */
+    #contents_area_2 div.contents_list ons-col.heading{
+        width: 50%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の見出し */
+    #contents_area_2 div.contents_list ons-col.heading label{
+        font-size: 13px;
+    }
 }
 
-/* コンテンツリスト */
-#contents_area_2 div.contents_list{
-}
 
-/* リストアイテム */
-#contents_area_2 div.contents_list ons-row.list_item{
-    width: 98%;
-    height: 70px;
-    border: solid 1px black;
-    text-align: left;
-    margin-bottom: 3%
-}
 
-/* リストアイテム内の画像の領域 */
-#contents_area_2 div.contents_list ons-col.picture{
-    width: 50%;
-    height: 100%;
-}
 
-/* リストアイテム内の画像 */
-#contents_area_2 div.contents_list ons-col.picture img{
-    width: 100%;
-    height: 100%;
-}
+/* 横画面 */
+@media screen and (min-width: 381px) {
+    
+    
+    /* 画面全体 */
+    section#page{
+        width: 100%;
+        height: 960px;
+        background-color: white;
+    }
 
-/* リストアイテム内の説明の領域 */
-#contents_area_2 div.contents_list ons-col.description{
-    width: 50%;
-    height: 100%;
-}
-
-/* リストアイテム内の説明 */
-#contents_area_2 div.contents_list ons-col.description label{
-    font-size: 13px;
+    /* コンテンツ領域1 */
+    
+    /* 全体 */
+    section#contents_area_1{
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        margin-bottom: 5%;
+    }
+    
+    /* タイトル画像の領域 */
+    #contents_area_1 ons-row.title_picture{
+        width: 100%;
+        height: 70%;
+        margin-bottom: 8%;
+    }
+    
+    /* タイトル画像*/
+    
+        #contents_area_1 ons-row.title_picture img{  
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+    }
+    
+    
+    
+    /* 概要 */
+    #contents_area_1 ons-row.overview{
+        width: 90%;
+        height: auto;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+    
+    
+    /* コンテンツ領域2 */
+    
+    /* 全体 */
+    section#contents_area_2{
+        width: 100%;
+        height: 55%;
+        text-align: center;
+        overflow-y: auto;
+    }
+    
+    /* コンテンツリスト */
+    #contents_area_2 div.contents_list{
+        padding-left: 5%;
+        padding-right: 5%;
+        
+    }
+    
+    /* リストアイテム */
+    #contents_area_2 div.contents_list ons-row.list_item{
+        width: 98%;
+        height: 112px;
+        border: solid 1px black;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+    
+    /* リストアイテム内の画像の領域 */
+    #contents_area_2 div.contents_list ons-col.picture{
+        width: 50%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の画像 */
+    #contents_area_2 div.contents_list ons-col.picture img{
+        width: 100%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の見出しの領域 */
+    #contents_area_2 div.contents_list ons-col.heading{
+        width: 50%;
+        height: 100%;
+    }
+    
+    /* リストアイテム内の見出し */
+    #contents_area_2 div.contents_list ons-col.heading label{
+        font-size: 13px;
+    }
 }
