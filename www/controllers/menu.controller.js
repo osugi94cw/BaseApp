@@ -1,15 +1,16 @@
-function MenuCtrl(){
+function MenuCtrl(CommonService){
     
     this.menuTransition = function(argument){
-
-        var options = {
+        this.commonTransition = new CommonService();
+        /*var options = {
             animation:'fade',
             param1:argument
         };
-        navi.pushPage('views/html/library.html', options);
+        navi.pushPage('views/html/library.html', options);*/
     }
+    
 }
 
-ons
-    .bootstrap('templateApp')
+angular
+    .module('templateApp')
     .controller('MenuCtrl', MenuCtrl);

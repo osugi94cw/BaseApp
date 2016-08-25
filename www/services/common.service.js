@@ -1,11 +1,12 @@
 function CommonService(){
-    this.commonTransition = function(argument){
-        alert(argument);
+    var commonTransition = function(){
+        this.testct = 500;
+        alert(this.testct);
     };
     return commonTransition;
     
 }
 
-ons
-    .bootstrap('templateApp')
-    .factory('CommonService', CommonService);
+angular
+    .module('templateApp')
+    .service('CommonService', CommonService);
