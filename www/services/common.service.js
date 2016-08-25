@@ -1,12 +1,15 @@
-function CommonService(){
-    var commonTransition = function(){
-        this.testct = 500;
-        alert(this.testct);
+//TransitionService
+function TransitionService(){
+    
+    var screenTransition = function(argument1,argument2){
+        this.target = argument1; //遷移先
+        this.options = argument2; //optionsオブジェクト
+        navi.pushPage(this.target, this.options); //OnsenUI<ons-navigator>コンポーネントの画面遷移メソッド
     };
-    return commonTransition;
+    return screenTransition;
     
 }
-
+//サービスの定義
 angular
     .module('templateApp')
-    .service('CommonService', CommonService);
+    .service('TransitionService', TransitionService);

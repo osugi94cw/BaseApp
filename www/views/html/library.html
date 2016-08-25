@@ -1,7 +1,7 @@
 
 <!-- ライブラリー画面 -->
 
-<ons-page>
+<ons-page ng-controller="LibraryCtrl as lib" id="LibraryPage">
     <!-- ページ全体のCSSを設定するためのsection -->
     
         
@@ -28,12 +28,13 @@
                     概要を記載します。あああああああああああああああああああああ
                 </label>
             </ons-row>
+            
         </section>
         
         
         <!-- コンテンツ領域2 -->
         <section id="contents_area_2">
-        
+            
             <!-- コンテンツリスト -->
             <div class="contents_list">
                 

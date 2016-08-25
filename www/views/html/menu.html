@@ -1,5 +1,5 @@
 
-<ons-page ng-controller="MenuCtrl as menu">
+<ons-page>
     <!-- メニュー画面 -->
         <!-- <ons-toolbar>
           <div class="left">
@@ -27,7 +27,7 @@
             
             <!-- コンテンツ領域2 -->
             
-            <section id="contents_area_2">
+            <section id="contents_area_2" ng-controller="ButtonCtrl as btn">
             
                 <!-- 見出しa -->
                 <section class="a">
@@ -40,16 +40,16 @@
                     <!-- ボタン部分 -->
                     <ons-row>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryA')"><img src="views/img/menu/buttonA.png" alt="" /><br>Library A</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryA')"><img src="views/img/menu/buttonA.png" alt="" /><br>Library A</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryB')"><img src="views/img/menu/buttonB.png" alt="" /><br>Library B</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryB')"><img src="views/img/menu/buttonB.png" alt="" /><br>Library B</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryC')"><img src="views/img/menu/buttonC.png" alt="" /><br>Library C</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryC')"><img src="views/img/menu/buttonC.png" alt="" /><br>Library C</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryD')"><img src="views/img/menu/buttonD.png" alt="" /><br>Library D</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryD')"><img src="views/img/menu/buttonD.png" alt="" /><br>Library D</ons-button>
                         </ons-col>
                     </ons-row>       
                 </section>
@@ -67,16 +67,16 @@
                     <!-- ボタン部分 -->
                     <ons-row>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryE')"><img src="views/img/menu/buttonE.png" alt="" /><br>Library E</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryE')"><img src="views/img/menu/buttonE.png" alt="" /><br>Library E</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryF')"><img src="views/img/menu/buttonF.png" alt="" /><br>Library F</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryF')"><img src="views/img/menu/buttonF.png" alt="" /><br>Library F</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryG')"><img src="views/img/menu/buttonG.png" alt="" /><br>Library G</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryG')"><img src="views/img/menu/buttonG.png" alt="" /><br>Library G</ons-button>
                         </ons-col>
                         <ons-col>
-                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryH')"><img src="views/img/menu/buttonH.png" alt="" /><br>Library H</ons-button>
+                            <ons-button modifier="lib" ng-click="btn.menuTransition('libraryH')"><img src="views/img/menu/buttonH.png" alt="" /><br>Library H</ons-button>
                         </ons-col>
                     </ons-row>
                     

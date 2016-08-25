@@ -1,5 +1,0 @@
-(function(){
-    ons.bootstrap('templateApp',[]);
-    
-})();
-

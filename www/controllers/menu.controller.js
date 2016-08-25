@@ -1,16 +1,20 @@
-function MenuCtrl(CommonService){
+//ButtonCtrl
+function ButtonCtrl(TransitionService){
     
     this.menuTransition = function(argument){
-        this.commonTransition = new CommonService();
-        /*var options = {
-            animation:'fade',
-            param1:argument
-        };
-        navi.pushPage('views/html/library.html', options);*/
+        
+        var transitionTarget = 'views/html/library.html'; //遷移先のファイルパス
+        
+        var options={};
+        options.data = {
+            animation:'fade', //遷移アニメーション
+            param1:argument //パラメータ
+        };    
+        this.screenTransition = new TransitionService(transitionTarget, options); //サービスのメソッドを呼び出す
     }
     
 }
-
+//コントローラーの定義
 angular
     .module('templateApp')
-    .controller('MenuCtrl', MenuCtrl);
+    .controller('ButtonCtrl', ButtonCtrl);
