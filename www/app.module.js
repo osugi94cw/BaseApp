@@ -1,0 +1,5 @@
+(function(){
+    ons.bootstrap('templateApp',[]);
+    
+})();
+

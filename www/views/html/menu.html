@@ -1,0 +1,90 @@
+
+<ons-page ng-controller="MenuCtrl as menu">
+    <!-- メニュー画面 -->
+        <!-- <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Back</ons-back-button>
+          </div>
+          <div class="center">Navigation</div>
+        </ons-toolbar> -->
+        
+        
+        <!-- ページ全体のCSSを設定するためのsection -->
+        <section id="page">
+            
+            
+            <!-- ヘッダー領域 -->
+            <header>
+                <label class="title">タイトル</label>
+            </header>
+            
+            
+            <!-- コンテンツ領域1 -->
+            <section id="contents_area_1">
+                
+            </section>
+            
+            
+            <!-- コンテンツ領域2 -->
+            
+            <section id="contents_area_2">
+            
+                <!-- 見出しa -->
+                <section class="a">
+                
+                    <!-- 見出し部分 -->
+                    <div class="title">　
+                        見出しa
+                    </div>
+                    
+                    <!-- ボタン部分 -->
+                    <ons-row>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryA')"><img src="views/img/menu/buttonA.png" alt="" /><br>Library A</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryB')"><img src="views/img/menu/buttonB.png" alt="" /><br>Library B</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryC')"><img src="views/img/menu/buttonC.png" alt="" /><br>Library C</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryD')"><img src="views/img/menu/buttonD.png" alt="" /><br>Library D</ons-button>
+                        </ons-col>
+                    </ons-row>       
+                </section>
+                
+                <!-- 見出しb -->
+                <section class="b">
+                
+                    <!-- 見出し部分 -->
+                    <div class="title">
+                        見出しb
+                    </div>
+                    
+                    
+                        
+                    <!-- ボタン部分 -->
+                    <ons-row>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryE')"><img src="views/img/menu/buttonE.png" alt="" /><br>Library E</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryF')"><img src="views/img/menu/buttonF.png" alt="" /><br>Library F</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryG')"><img src="views/img/menu/buttonG.png" alt="" /><br>Library G</ons-button>
+                        </ons-col>
+                        <ons-col>
+                            <ons-button modifier="lib" ng-click="menu.menuTransition('libraryH')"><img src="views/img/menu/buttonH.png" alt="" /><br>Library H</ons-button>
+                        </ons-col>
+                    </ons-row>
+                    
+                    </style>
+                    
+                </section>
+                
+            </section>
+        
+        </section>
+</ons-page>

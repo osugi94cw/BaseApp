@@ -19,9 +19,6 @@ app.controller('ButtonController', function($scope) {
   }
 })
 
-ons.ready(function() {
-            console.log("Onsen UI is ready!");
-        });
-        
+
 
 

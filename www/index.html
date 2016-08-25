@@ -8,12 +8,17 @@
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/onsenui/js/onsenui.min.js"></script>
     <script src="lib/onsenui/js/angular-onsenui.min.js"></script>
-    <script src="js/menu.js"></script>
+    
+    <script src="app.module.js"></script>
+    <script src="controllers/menu.controller.js"></script>
 
     <link rel="stylesheet" href="components/loader.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
     
+    <link rel="stylesheet" href="views/css/menu.css">
+    <link rel="stylesheet" href="views/css/library.css">
+
     
     <script>
         
@@ -24,13 +29,9 @@
     <ons-page>
         <ons-navigator
           var="navi"
-          page="menu.html">
+          page="views/html/menu.html">
         </ons-navigator>
     </ons-page>
-    
-    <style>/*
-        <ng-include src="'menu.html'"></ng-include>
-    */</style>
     
 
 </body>
