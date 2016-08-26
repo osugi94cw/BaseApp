@@ -1,5 +1,5 @@
 (function(){
-    ons.bootstrap('templateApp',[]);　//モジュールの定義
+    ons.bootstrap('templateApp',[]);　//アプリ全体で使用するモジュールの定義
 })();
 
 
