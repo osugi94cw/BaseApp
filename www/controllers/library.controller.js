@@ -1,8 +1,10 @@
 function LibraryCtrl(){
     navi.on('postpush', function(event){
-        var test = navi.topPage.data.param1;
-        alert(test);
-
+        alert("遷移成功")
+        var param1 = navi.topPage.data.param1;
+        var animation = navi.topPage.data.animation;
+        alert(animation);
+        alert(param1);
     })
 }
 
