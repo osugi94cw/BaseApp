@@ -1,12 +1,12 @@
 <!-- ライブラリー画面 -->
-<ons-page modifier="con" id="con">
+<ons-page modifier="con" id="con" ng-controller="ContentsCtrl as con">
 
     <!-- ヘッダー領域 -->
     <header id="ContentsHeader">
         <!-- ナビゲーションバー -->
         <ons-toolbar class="ContentsNavigationBar">
             <div class="left">
-                <ons-back-button>Back</ons-back-button>
+                <ons-back-button ng-click="navi.popPage({animation:'slide'})">Back</ons-back-button>
             </div>
             <div class="center"></div>
             <div class="right"></div>
@@ -17,9 +17,10 @@
     <!-- コンテンツ領域 -->
     <section id="ContentsArea">
     
-    <div class="blank">
-        　
-    </div>
+        <!-- 空白 -->
+        <div class="blank">
+            　
+        </div>
         
         <!-- コンテンツ -->
         <div class="Contents">

@@ -6,7 +6,7 @@
         <!-- ナビゲーションバー -->
         <ons-toolbar class="LibraryNavigationBar">
             <div class="left">
-                <ons-back-button>Back</ons-back-button>
+                <ons-back-button ng-click="navi.popPage({animation:'slide'})">Back</ons-back-button>
             </div>
             <div class="center"></div>
             <div class="right"></div>
@@ -32,60 +32,75 @@
         
         
     <!-- コンテンツリスト領域 -->
-    <section id="LibraryContentsListArea">
+    <section id="LibraryContentsListArea" ng-controller="ContentsListCtrl as conlist">
         
         <!-- コンテンツリスト -->
         <div class="LibraryContentsList">
+                <!-- 1行目 -->
                 <ons-row>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsA')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsA
                         </ons-button>  
                     </ons-col>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsB')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsB
                         </ons-button>  
                     </ons-col>
                 </ons-row>
+                
+                <!-- 2行目 -->
                 <ons-row>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsC')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsC
                         </ons-button>  
                     </ons-col>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsD')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsD
                         </ons-button>  
                     </ons-col>
                 </ons-row>
+                
+                <!-- 3行目 -->
                 <ons-row>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsE')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsE
                         </ons-button>
                     </ons-col>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsF')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsF
                         </ons-button>  
                     </ons-col>
                 </ons-row>
+                
+                <!-- 4行目 -->
                 <ons-row>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsG')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsG
                         </ons-button>  
                     </ons-col>
-                    <ons-col class="LibraryContentsListItem">
+                    <!-- リストアイテム -->
+                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsH')">
                         <ons-button modifier="LibBtn">
                             <img src="views/img/library/contents_picture.png" alt="" />
                             ContentsH

@@ -19,11 +19,13 @@
         background-color: white;
     }
     
+    /* 空白 */
     .blank{
         height: 30%;
         background-color: white;
     }
     
+    /* コンテンツ */
     .Contents{
         height: 30%;
         text-align: center;
