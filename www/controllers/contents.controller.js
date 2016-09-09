@@ -1,3 +1,5 @@
+ons.bootstrap('contentsModule', ['transitionModule']);
+
 //ContentsCtrl
 function ContentsCtrl(){
     navi.on('postpush', function(event){ //pushPage完了後に動作
@@ -9,5 +11,5 @@ function ContentsCtrl(){
 
 //コントローラの定義
 angular
-    .module('templateApp')
+    .module('contentsModule')
     .controller('ContentsCtrl', ContentsCtrl);

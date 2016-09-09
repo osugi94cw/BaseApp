@@ -1,3 +1,4 @@
+ons.bootstrap('menuModule', ['transitionModule']);
 
 //LibraryButtonCtrl
 function LibraryButtonCtrl(TransitionService){
@@ -13,5 +14,5 @@ function LibraryButtonCtrl(TransitionService){
 }
 //コントローラーの定義
 angular
-    .module('templateApp')
+    .module('menuModule')
     .controller('LibraryButtonCtrl', ['TransitionService', LibraryButtonCtrl]);

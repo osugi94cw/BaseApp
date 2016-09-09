@@ -1,3 +1,5 @@
+ons.bootstrap('libraryModule', ['transitionModule']);
+
 
 //LibraryCtrl
 function LibraryCtrl(){
@@ -21,6 +23,6 @@ function ContentsListCtrl(TransitionService){
 
 //コントローラーの定義
 angular
-    .module('templateApp')
+    .module('libraryModule')
     .controller('LibraryCtrl', LibraryCtrl)
     .controller('ContentsListCtrl',['TransitionService', ContentsListCtrl]);

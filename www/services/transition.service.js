@@ -1,3 +1,5 @@
+angular.module('transitionModule', []);
+
 //TransitionService
 function TransitionService(){
     
@@ -15,5 +17,5 @@ function TransitionService(){
 }
 //サービスの定義
 angular
-    .module('templateApp')
+    .module('transitionModule')
     .service('TransitionService', TransitionService);

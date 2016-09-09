@@ -12,15 +12,15 @@
 
     }
     
+    
+    
     /* コンテンツ領域 */
     section#ContentsArea{
         width: 100%;
         height: 100%;
         background-color: white;
     }
-    
-    /* 空白 */
-    .blank{
+    div.blank{
         height: 30%;
         background-color: white;
     }
@@ -31,6 +31,8 @@
         text-align: center;
         background-color: #f8f8f8;
         line-height: 10;
+
+        
     }
 }
 

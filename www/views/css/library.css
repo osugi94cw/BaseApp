@@ -143,7 +143,7 @@
     /* コンテンツリスト領域 */
     section#LibraryContentsListArea{
         width: 100%;
-        height: calc(50% * 1.77);
+        height: calc(45% * 1.77);
         text-align: center;
     }
     
@@ -152,7 +152,7 @@
         padding-left: 5%;
         padding-right: 5%;
         height: 100%;
-        overflow-y: auto;
+
         
     }
     /* リストアイテム */
