@@ -1,80 +1,143 @@
-/**/
-
-/* 画面全体 */
-#page{
+/* ons-pageのCSS変更 */
+.page--menu{
     width: 100%;
     height: 100%;
     background-color: #f8f8f8;
 }
-
-/* ヘッダー領域 */
-
-/* 全体 */
-header{
-    width: 100%;
-    height: 15%;
-    text-align: center;
-    line-height: 550%;
-    background-color: white;
     
-    margin-bottom: 5%;
-}
-/* タイトル */
-header label.title{
-        font-size: 30px;
-}
-
-/* コンテンツ領域1 */
-
-/* 全体 */
-section#contents_area_1{
-    width: 100%;
-    height: 40%;
-    background-color: white;
-    
-    margin-bottom: 5%;
-}
-
-
-
-/* コンテンツ領域2 */
-
-/* 全体 */
-section#contents_area_2{
-    width: 100%;
-    height: 40%;
-    background-color: white;
-}
-
-/* 見出し部分 */
-#contents_area_2 div.title{
-    width: 99%;
-    height: 5%;
-    text-align: center;
-    line-height: 150%;
-    
-    border: solid 1px;
-    
-    background-color: white;
-}
-
-/* ボタンを表示する行 */
-#contents_area_2 ons-row{
-    text-align: center;
-}
-
-/* ボタン内の画像 */
-#contents_area_2 ons-button > img{
-    vertical-align: bottom;
-    margin-bottom: 0;
-}
-
-/* ons-buttonのデザイン変更 */ 
-.button--lib{
+/* ons-buttonのCSS変更 */ 
+.button--MenuLibBtn{
     background: none;
     color: black;
     height: 100%;
 }
-.button--lib:active {
-  background-color: white;
+.button--MenuLibBtn:active {
+     background-color: white;
+}
+
+/*iPhone6縦 */
+@media screen and (max-width: 380px) and (max-height: 670px) { 
+    
+    /* ヘッダー領域 */
+    header#MenuHeader{
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        line-height: 2;
+        background-color: white;
+        
+        margin-bottom: 3%;
+    }
+    /* タイトル */
+    label.MenuAppTitle{
+            font-size: 300%;
+    }
+    
+    
+    
+    /* コンテンツ領域 */
+    section#MenuContentsArea{
+        width: 100%;
+        height: 40%;
+        background-color: white;
+        
+        margin-bottom: 3%;
+    }
+    
+    
+    
+    /* ライブラリー選択ボタン領域 */
+    section#MenuLibraryButtonArea{
+        width: 100%;
+        height: 40%;
+        text-align: center;
+        background-color: white;
+    }
+    
+    /* 見出し部分 */
+    div.MenuLibraryButtonHeadline{
+        width: 99%;
+        height: 5%;
+        text-align: center;
+        line-height: 150%;
+        
+        border: solid 1px;
+        
+        background-color: white;
+    }
+    
+    /* ボタンを表示する行 */
+    ons-row.MenuLibraryButton{
+        text-align: center;
+    }
+    
+    /* ボタン内の画像 */
+    .MenuLibraryButton ons-button > img{
+        vertical-align: bottom;
+        margin-bottom: 0;
+    }
+
+}
+
+/*iPhone6横 */
+@media screen and (max-width: 670px) and (max-height: 380px) {
+    
+    /* ヘッダー領域 */
+    header#MenuHeader{
+        width: 100%;
+        height: calc(15% * 1.77);
+        text-align: center;
+        line-height: 2;
+        background-color: white;
+        
+        margin-bottom: 3%;
+    }
+    /* タイトル */
+    label.MenuAppTitle{
+            font-size: 300%;
+    }
+    
+    
+    
+    /* コンテンツ領域 */
+    section#MenuContentsArea{
+        width: 100%;
+        height: calc(40% * 1.77);
+        background-color: white;
+        
+        margin-bottom: 3%;
+    }
+    
+    
+    
+    /* ライブラリー選択ボタン領域 */
+    section#MenuLibraryButtonArea{
+        width: 100%;
+        height: calc(40% * 1.77);
+        text-align: center;
+        background-color: white;
+    }
+    
+    /* 見出し部分 */
+    div.MenuLibraryButtonHeadline{
+        width: 99%;
+        height: 5%;
+        text-align: center;
+        line-height: 150%;
+        
+        border: solid 1px;
+        
+        background-color: white;
+    }
+    
+    /* ボタンを表示する行 */
+    ons-row.MenuLibraryButton{
+        text-align: center;
+    }
+    
+    /* ボタン内の画像 */
+    .MenuLibraryButton ons-button > img{
+        vertical-align: bottom;
+        margin-bottom: 0;
+    }
 }
