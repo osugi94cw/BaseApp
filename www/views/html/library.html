@@ -110,4 +110,10 @@
 
         </div>
     </section>
+    
+    <ons-modal id="myModal" var="modal">
+        <ons-progress-circular indeterminate></ons-progress-circular><br>
+        <ons-button ng-click="modal.hide()">off</ons-button>
+    </ons-modal>
+    <ons-button ng-click="modal.show()">on</ons-button>
 </ons-page>

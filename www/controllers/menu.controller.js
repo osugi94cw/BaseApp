@@ -6,8 +6,8 @@ function LibraryButtonCtrl(TransitionService){
     this.menuTransition = function(argument){
         
         var target = 'views/html/library.html'; //遷移先のファイルパス
-        var category = argument; //ライブラリーのカテゴリ
-        this.screenTransition = new TransitionService(target, category); //サービスを呼び出す
+        var id = argument; //ライブラリーのカテゴリ
+        this.screenTransition = new TransitionService(target, id); //サービスを呼び出す
         
     }
     

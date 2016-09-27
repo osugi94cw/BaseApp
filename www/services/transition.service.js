@@ -8,10 +8,10 @@ function TransitionService(){
         var options = {
             animation:'fade',
             data:{ //オブジェクトの定義
-                param1:argument2 //カテゴリ
+                param1:argument2
             }
         };
-        navi.pushPage(target, options); //pushPageメソッドの呼び出し
+        navi.pushPage(target, options); //pushPageメソッド
     };
     return screenTransition; 
 }
