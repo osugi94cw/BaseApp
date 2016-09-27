@@ -1,2 +1,12 @@
-/* This is a CSS file */
-
+.button--BackButton{
+    background: none;
+    color: #006896;
+    height: 100%;
+}
+.button--BackButton:active {
+     background-color: white;
+}
+.button--BackButton > b{
+    font-weight: bolder;
+    font-size: 100%;
+}
