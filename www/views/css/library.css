@@ -1,199 +1,172 @@
-/* This is a CSS file */
-
-
-/* 縦画面 */
-@media screen and (max-width: 380px) {
     
-    
-    /* 画面全体 */
-    section#page{
+/* ons-buttonのCSS変更 */ 
+.button--LibBtn{
+    background: none;
+    color: black;
+    height: 100%;
+    padding: 0;
+    font-size: 80%;
+}
+.button--LibBtn:active {
+     background-color: white;
+}
+
+/*iPhone6縦 */
+@media screen and (max-width: 380px) and (max-height: 670px) { 
+    /* ons-pageのCSS変更 */
+    .page--lib{
         width: 100%;
         height: 100%;
-        background-color: white;   
+        background-color: #f8f8f8;
     }
-
-
-    /* コンテンツ領域1 */
     
-    /* 全体 */
-    section#contents_area_1{
+    /* ヘッダー領域 */
+    header#LibraryHeader{
+
+    }
+    
+    /* ライブラリー概要領域 */
+    section#LibraryOverviewArea{
         width: 100%;
-        height: 40%;
+        height: 45%;
         text-align: center;
         margin-bottom: 5%;
+        background-color: white;
     }
     
     /* タイトル画像の領域 */
-    #contents_area_1 ons-row.title_picture{
+    ons-row.LibraryTitlePicture{
         width: 100%;
         height: 70%; 
-        margin-bottom: 8%;
+        margin-bottom: 5%;
     }
     
     /* タイトル画像*/
-        #contents_area_1 ons-row.title_picture img{  
+    .LibraryTitlePicture img{  
         width: 100%;
         height: auto;
         max-width: 100%;
     }
     
-    
     /* 概要 */
-    #contents_area_1 ons-row.overview{
+    ons-row.LibraryOverview{
         width: 90%;
-        height: auto;
+        height: 30%;
         margin-right: 5%;
         margin-left: 5%;
     }
     
     
-    /* コンテンツ領域2 */
-    
-    /* 全体 */
-    section#contents_area_2{
+    /* コンテンツリスト領域 */
+    section#LibraryContentsListArea{
         width: 100%;
-        height: 55%;
+        height: 50%;
         text-align: center;
     }
     
     /* コンテンツリスト */
-    #contents_area_2 div.contents_list{
+    div.LibraryContentsList{
         padding-left: 5%;
         padding-right: 5%;
         height: 100%;
         overflow-y: auto;
         
     }
-    
     /* リストアイテム */
-    #contents_area_2 div.contents_list ons-row.list_item{
-        width: 98%;
-        height: 70px;
-        border: solid 1px black;
-        text-align: left;
-        margin-bottom: 2%;
+    .LibraryContentsListItem{
+        margin: 1%;
+        padding: 0;
+        line-height: 0;
+        background-color: white;
+        
     }
-    
-    /* リストアイテム内の画像の領域 */
-    #contents_area_2 div.contents_list ons-col.picture{
+    /* アイテム内画像 */
+    .LibraryContentsListItem img{
         width: 50%;
-        height: 100%;
+        height: auto;
+        vertical-align: middle;
     }
-    
-    /* リストアイテム内の画像 */
-    #contents_area_2 div.contents_list ons-col.picture img{
-        width: 100%;
-        height: 100%;
-    }
-    
-    /* リストアイテム内の見出しの領域 */
-    #contents_area_2 div.contents_list ons-col.heading{
-        width: 50%;
-        height: 100%;
-    }
-    
-    /* リストアイテム内の見出し */
-    #contents_area_2 div.contents_list ons-col.heading label{
-        font-size: 13px;
-    }
+
+
+
 }
 
 
-
-
 /* 横画面 */
-@media screen and (min-width: 381px) {
+@media screen and (max-width: 670px) and (max-height: 380px) {
     
-    
-    /* 画面全体 */
-    section#page{
+    /* ons-pageのCSS変更 */
+    .page--lib{
         width: 100%;
-        height: 960px;
-        background-color: white;
+        height: calc(100% * 1.77);
+        background-color: #f8f8f8;
     }
-
-    /* コンテンツ領域1 */
     
-    /* 全体 */
-    section#contents_area_1{
+    
+    /* ヘッダー領域 */
+    header#LibraryHeader{
+
+    }
+    
+    /* ライブラリー概要領域 */
+    section#LibraryOverviewArea{
         width: 100%;
-        height: 40%;
+        height: calc(45% * 1.77);
         text-align: center;
         margin-bottom: 5%;
+        background-color: white;
     }
     
     /* タイトル画像の領域 */
-    #contents_area_1 ons-row.title_picture{
+    ons-row.LibraryTitlePicture{
         width: 100%;
         height: 70%;
-        margin-bottom: 8%;
+        margin-bottom: 5%;
     }
     
     /* タイトル画像*/
-    
-        #contents_area_1 ons-row.title_picture img{  
+    .LibraryTitlePicture img{  
         width: 100%;
         height: auto;
         max-width: 100%;
     }
     
-    
-    
     /* 概要 */
-    #contents_area_1 ons-row.overview{
+    ons-row.LibraryOverview{
         width: 90%;
-        height: auto;
+        height: 30%;
         margin-right: 5%;
         margin-left: 5%;
     }
     
     
-    /* コンテンツ領域2 */
-    
-    /* 全体 */
-    section#contents_area_2{
+    /* コンテンツリスト領域 */
+    section#LibraryContentsListArea{
         width: 100%;
-        height: 55%;
+        height: calc(45% * 1.77);
         text-align: center;
-        overflow-y: auto;
     }
     
     /* コンテンツリスト */
-    #contents_area_2 div.contents_list{
+    div.LibraryContentsList{
         padding-left: 5%;
         padding-right: 5%;
+        height: 100%;
+
         
     }
-    
     /* リストアイテム */
-    #contents_area_2 div.contents_list ons-row.list_item{
-        width: 98%;
-        height: 112px;
-        border: solid 1px black;
-        text-align: left;
-        margin-bottom: 8px;
+    .LibraryContentsListItem{
+        margin: 1%;
+        padding: 0;
+        line-height: 0;
+        background-color: white;
+        
     }
-    
-    /* リストアイテム内の画像の領域 */
-    #contents_area_2 div.contents_list ons-col.picture{
+    /* アイテム内画像 */
+    .LibraryContentsListItem img{
         width: 50%;
-        height: 100%;
-    }
-    
-    /* リストアイテム内の画像 */
-    #contents_area_2 div.contents_list ons-col.picture img{
-        width: 100%;
-        height: 100%;
-    }
-    
-    /* リストアイテム内の見出しの領域 */
-    #contents_area_2 div.contents_list ons-col.heading{
-        width: 50%;
-        height: 100%;
-    }
-    
-    /* リストアイテム内の見出し */
-    #contents_area_2 div.contents_list ons-col.heading label{
-        font-size: 13px;
+        height: auto;
+        vertical-align: middle;
     }
 }
