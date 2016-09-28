@@ -1,7 +1,7 @@
-angular.module('dataAcquisitionModule', []);
+
 
 //GetLibDataService
-function LibraryDataAcquisitionService($q,$rootScope){
+function ContentsErrorService($q,$rootScope){
 
     var libraryDataAcquisition = function(argument){
         var libraryId = argument; //ライブラリーIDを格納
@@ -18,7 +18,7 @@ function LibraryDataAcquisitionService($q,$rootScope){
         var libraryOverview = [];
         
         //contentsListクラス
-        var contentsList = ncmb.DataStore("contentsList");
+        var contentsList = ncmb.DataStore("contentsError");
         var contentsPictureUrl = [];
         var contentsName = [];
         var contentsType = [];
@@ -100,4 +100,4 @@ function LibraryDataAcquisitionService($q,$rootScope){
 //サービスの定義
 angular
     .module('dataAcquisitionModule')
-    .service('LibraryDataAcquisitionService', ['$q','$rootScope', LibraryDataAcquisitionService]); 
+    .service('ContentsErrorService', ['$q','$rootScope', ContentsErrorService]); 
