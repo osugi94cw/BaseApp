@@ -1,9 +1,10 @@
-ons.bootstrap('libraryModule', ['transitionModule','dataAcquisitionModule']);
+ons.bootstrap('libraryModule', ['transitionModule','dataAcquisitionModule','connectionModule']);
 
 
 //LibraryCtrl
-function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,ContentsErrorService){
+function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,ContentsErrorService,ConnectionService){
     var vm = this; //this コンテキストを、ViewModel を意味する vm として保持する
+    // vm.checkConnection = new ConnectionService(); //サービスの呼び出し
     var libraryId = navi.topPage.pushedOptions.data.param1; //受け取ったパラメータを代入
     console.log(libraryId + "がタップされました"); //値を受け取れたかの確認
     document.querySelector("#myModal").show(); //インジケータを表示
@@ -56,11 +57,43 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
     });
     
     //ネットワークの接続を確認
-    //...
-    
-    
+//     vm.checkConnection = function() {
+//         var networkState = navigator.connection.type;
+//     
+//         var states = {};
+//         states[Connection.UNKNOWN]  = '接続先が不明の回線';
+//         states[Connection.ETHERNET] = 'イーサネット';
+//         states[Connection.WIFI]     = 'WiFi';
+//         states[Connection.CELL_2G]  = '2G';
+//         states[Connection.CELL_3G]  = '3G';
+//         states[Connection.CELL_4G]  = '4G';
+//         states[Connection.CELL]     = 'Generic Cell';
+//         states[Connection.NONE]     = 'No network connection';
+// 
+//         
+// 
+//         if(networkState == Connection.NONE){
+//             ons.notification.alert({
+//                 title: '',
+//                 messageHTML: 'ネットワークに接続できません。接続を確認してください',
+//                 buttonLabel: 'OK',
+//                 callback: function(){
+//                     navi.popPage({animation:'slide'});
+//                 }
+//             });
+//         }
+//         else{
+//             ons.notification.alert({
+//                 title: '',
+//                 messageHTML: '現在は' + states[networkState] + 'に接続されています',
+//                 buttonLabel: 'OK'
+//             });
+//         }
+//     }
 
 }
+
+
 
 //ContentsListCtrl
 function ContentsListCtrl(TransitionService){
@@ -83,5 +116,5 @@ function ContentsListCtrl(TransitionService){
 //コントローラーの定義
 angular
     .module('libraryModule')
-    .controller('LibraryCtrl', ['LibraryDataAcquisitionService','$scope','LibraryErrorService','ContentsErrorService', LibraryCtrl])
+    .controller('LibraryCtrl', ['LibraryDataAcquisitionService','$scope','LibraryErrorService','ContentsErrorService','ConnectionService', LibraryCtrl])
     .controller('ContentsListCtrl',['TransitionService', ContentsListCtrl]);

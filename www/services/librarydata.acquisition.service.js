@@ -70,29 +70,27 @@ function LibraryDataAcquisitionService($q,$rootScope){
 
                 
             }
-            // data.conData = {
-            //     contentsPicture:contentsPictureUrl,
-            //     contentsHeadline:contentsName,
-            //     contentsCategory:contentsType,
-            //     contentsURL:contentsUrl
-            // };
             $rootScope.$broadcast('libraryDataGot', data);
         })
         .catch(function(err){
             console.log(err);
-            ons.notification.confirm({
-                title: '',
-                messageHTML: 'データの取得に失敗しました。再接続を行いますか。',
-                buttonLabels: ['OK','キャンセル'],
-                callback: function(arg){
-                    if(arg == 0){
-                        libraryDataAcquisition(libraryId);
+            
+            var networkState = navigator.connection.type;
+            if(networkState != Connection.NONE){
+                ons.notification.confirm({
+                    title: '',
+                    messageHTML: 'データの取得に失敗しました。再接続を行いますか。',
+                    buttonLabels: ['OK','キャンセル'],
+                    callback: function(arg){
+                        if(arg == 0){
+                            libraryDataAcquisition(libraryId);
+                        }
+                        else{
+                            navi.popPage({animation:'slide'});
+                        }
                     }
-                    else{
-                        navi.popPage({animation:'slide'});
-                    }
-                }
-            });
+                });
+            }
         });
     };
     return libraryDataAcquisition;

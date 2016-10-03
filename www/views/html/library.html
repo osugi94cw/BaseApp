@@ -18,15 +18,14 @@
         
         <!-- タイトル画像 -->
         <ons-row class="LibraryTitlePicture">
-            {{lib.libraryPictureDataNone}}
             <img ng-src="{{lib.libraryPicture}}" alt="" ng-cloak />
         </ons-row>
         
         <!-- 概要 -->
         <ons-row class="LibraryOverview">
             <label ng-cloak>
-                {{lib.libraryPictureDataNone}}
-                {{lib.libraryOverview}}
+                {{lib.libraryOverview}}<br>
+                <!-- <ons-button ng-click="lib.checkConnection()">connection check</ons-button> -->
             </label>
         </ons-row>
         
@@ -64,6 +63,7 @@
     
     <ons-modal id="myModal" var="modal">
         <ons-progress-circular indeterminate></ons-progress-circular><br>
-        <ons-button ng-click="modal.hide()">off</ons-button>
     </ons-modal>
+    
+    
 </ons-page>
