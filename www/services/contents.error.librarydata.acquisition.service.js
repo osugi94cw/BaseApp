@@ -1,8 +1,6 @@
-//モジュールの定義
-angular.module('dataAcquisitionModule', []);
 
 //GetLibDataService
-function LibraryDataAcquisitionService($q,$rootScope){
+function ContentsErrorService($q,$rootScope){
     
     //mBaaSからデータを取得するメソッド
     var libraryDataAcquisition = function(argument){
@@ -20,7 +18,7 @@ function LibraryDataAcquisitionService($q,$rootScope){
         var libraryOverview = [];
         
         //contentsListクラス
-        var contentsList = ncmb.DataStore("contentsError"); //存在しないクラスを指定（エラー処理は走らない）
+        var contentsList = ncmb.DataStore("contentsList");
         var contentsPictureUrl = [];
         var contentsName = [];
         var contentsType = [];
@@ -31,11 +29,7 @@ function LibraryDataAcquisitionService($q,$rootScope){
         var libraryAcquisition = library.equalTo("libraryId", libraryId).order("createDate", true).fetchAll();
         var contentsListAcquisition = contentsList.equalTo("libraryId", libraryId).order("createDate", true).fetchAll();
         
-        //取得したデータを格納するオブジェクト。イベント経由でコントローラーに渡す
-        var data = {
-            library,
-            contentsList
-        };
+
         
         //$q.all() メソッドによる複数 Promise オブジェクトの監視
         //取得したデータを格納
@@ -43,6 +37,12 @@ function LibraryDataAcquisitionService($q,$rootScope){
         .then(function(results) {
             var libraryAcquisitionResults = results[0];
             var contentsListAcquisitionResults = results[1];
+            
+            //取得したデータを格納するオブジェクト。イベント経由でコントローラーに渡す
+            var data = {
+                library,
+                contentsList
+            };
             
             //ライブラリーの概要（タイトル画像・概要）を取得・格納
             for (var i = 0; i < libraryAcquisitionResults.length; i++) {
@@ -110,4 +110,4 @@ function LibraryDataAcquisitionService($q,$rootScope){
 //サービスの定義
 angular
     .module('dataAcquisitionModule')
-    .service('LibraryDataAcquisitionService', ['$q','$rootScope', LibraryDataAcquisitionService]); 
+    .service('ContentsErrorService', ['$q','$rootScope', ContentsErrorService]); 

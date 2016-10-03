@@ -1,21 +1,19 @@
-//モジュールの定義
-angular.module('dataAcquisitionModule', []);
 
-//GetLibDataService
-function LibraryDataAcquisitionService($q,$rootScope){
+//LibraryErrorService
+function LibraryErrorService($q,$rootScope){
     
     //mBaaSからデータを取得するメソッド
     var libraryDataAcquisition = function(argument){
         var libraryId = argument; //ライブラリーIDを格納
        
-       //mBaaSのAPIキーの設定とSDKの初期化（存在しないAPIキーを指定・・・エラー処理が走る）
-        var ncmb = new NCMB("340609a9b5431d19c497beb72411339fb9bd524570d8de15486d6557d07970ceaaaaaaaaaaaaaaaaaaaaaaaaa","dda8edefd900294fcadc8d2914debad64dfb4aa7a26919e759a20e5cf3c5c609");
+       //mBaaSのAPIキーの設定とSDKの初期化
+        var ncmb = new NCMB("340609a9b5431d19c497beb72411339fb9bd524570d8de15486d6557d07970ce","dda8edefd900294fcadc8d2914debad64dfb4aa7a26919e759a20e5cf3c5c609");
         
         //NCMB.DataStoreのサブクラスを生成
         //取得したデータの格納する配列を定義
         
         //libraryクラス
-        var library = ncmb.DataStore("libraryError"); //存在しないクラスを指定（エラー処理は走らない）
+        var library = ncmb.DataStore("library");
         var libraryPictureUrl = [];
         var libraryOverview = [];
         
@@ -110,4 +108,4 @@ function LibraryDataAcquisitionService($q,$rootScope){
 //サービスの定義
 angular
     .module('dataAcquisitionModule')
-    .service('LibraryDataAcquisitionService', ['$q','$rootScope', LibraryDataAcquisitionService]); 
+    .service('LibraryErrorService', ['$q','$rootScope', LibraryErrorService]); 

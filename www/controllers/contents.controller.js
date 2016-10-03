@@ -1,9 +1,6 @@
 
 //PDF表示機能を追加するまで、動画以外の画面として作成
 
-//モジュールの定義
-ons.bootstrap('contentsModule', ['repeatFinishedModule','connectionModule']);
-
 //ContentsCtrl
 function ContentsCtrl($scope,$sce,ConnectionService){
     var vm = this;
