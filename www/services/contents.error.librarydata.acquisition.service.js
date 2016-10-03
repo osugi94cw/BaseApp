@@ -18,7 +18,7 @@ function ContentsErrorService($q,$rootScope){
         var libraryOverview = [];
         
         //contentsListクラス
-        var contentsList = ncmb.DataStore("contentsList");
+        var contentsList = ncmb.DataStore("contentsListError");   //存在しないクラスを指定（エラー処理が走らない）
         var contentsPictureUrl = [];
         var contentsName = [];
         var contentsType = [];
