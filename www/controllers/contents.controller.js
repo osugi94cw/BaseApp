@@ -1,21 +1,19 @@
-ons.bootstrap('contentsModule', ['repeatFinishedModule']);
+
+//PDF表示機能を追加するまで、動画以外の画面として作成
+
+//モジュールの定義
+ons.bootstrap('contentsModule', ['repeatFinishedModule','connectionModule']);
 
 //ContentsCtrl
-function ContentsCtrl($scope,$sce){
+function ContentsCtrl($scope,$sce,ConnectionService){
     var vm = this;
-    var param1 = navi.topPage.pushedOptions.data.param1; //カテゴリを代入
-    console.log(param1 + "がタップされました"); //値を受け取れたかの確認
-    vm.url = $sce.trustAsResourceUrl(param1);
+    vm.checkConnection = new ConnectionService();   //接続確認サービスの呼び出し
+    var param1 = navi.topPage.pushedOptions.data.param1; //受け取ったパラメータを代入
+    vm.url = $sce.trustAsResourceUrl(param1);   //URLに信頼済みのマークを付与
     
 }
 
 //コントローラの定義
 angular
     .module('contentsModule')
-    .controller('ContentsCtrl', ['$scope', '$sce', ContentsCtrl])
-    .config(function ($sceDelegateProvider) {
-    $sceDelegateProvider.resourceUrlWhitelist([
-      'self',
-      'https://www.youtube.com/watch?v=8M8ChETpWRQ'
-    ]);
-  });
+    .controller('ContentsCtrl', ['$scope', '$sce', 'ConnectionService', ContentsCtrl]);

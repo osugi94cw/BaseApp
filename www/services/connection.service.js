@@ -1,25 +1,14 @@
+//モジュールの定義
 angular.module('connectionModule', []);
 
 //ConnectionService
 function ConnectionService(){
     
-    //ネットワークの接続を確認
+    //ネットワークの接続を確認するメソッド
     var checkConnection = function() {
         var networkState = navigator.connection.type;
-    
-        var states = {};
-        states[Connection.UNKNOWN]  = '接続先が不明の回線';
-        states[Connection.ETHERNET] = 'イーサネット';
-        states[Connection.WIFI]     = 'WiFi';
-        states[Connection.CELL_2G]  = '2G';
-        states[Connection.CELL_3G]  = '3G';
-        states[Connection.CELL_4G]  = '4G';
-        states[Connection.CELL]     = 'Generic Cell';
-        states[Connection.NONE]     = 'No network connection';
 
-        
-
-        if(networkState == Connection.NONE){
+        if(networkState == Connection.NONE){    //ネットワークに繋がっていないときアラートを表示
             ons.notification.alert({
                 title: '',
                 messageHTML: 'ネットワークに接続できません。接続を確認してください',

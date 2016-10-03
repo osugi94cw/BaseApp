@@ -1,8 +1,8 @@
+//モジュールの作成
 angular.module('transitionModule', []);
 
 //TransitionService
 function TransitionService(){
-    
     var screenTransition = function(argument1,argument2){
         var target = argument1; //遷移先
         var options = {
@@ -15,6 +15,7 @@ function TransitionService(){
     };
     return screenTransition; 
 }
+
 //サービスの定義
 angular
     .module('transitionModule')

@@ -1,22 +1,22 @@
+//モジュールの定義
 ons.bootstrap('libraryModule', ['transitionModule','dataAcquisitionModule','connectionModule']);
 
 
 //LibraryCtrl
 function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,ContentsErrorService,ConnectionService){
     var vm = this; //this コンテキストを、ViewModel を意味する vm として保持する
-    // vm.checkConnection = new ConnectionService(); //サービスの呼び出し
+    vm.checkConnection = new ConnectionService(); //接続確認サービスの呼び出し
     var libraryId = navi.topPage.pushedOptions.data.param1; //受け取ったパラメータを代入
-    console.log(libraryId + "がタップされました"); //値を受け取れたかの確認
     document.querySelector("#myModal").show(); //インジケータを表示
     
-    if(libraryId == "L006"){
+    if(libraryId == "L006"){    //データ取得時のエラーが動作するよう、アプリケーションIDを存在しないものにしたサービス
         vm.libraryDataAcquisition = new LibraryErrorService(libraryId); //サービスの呼び出し
     }
-    else if(libraryId == "L007"){
+    else if(libraryId == "L007"){    //上記と同様にデータ取得時のエラーが動作するよう、存在しないクラスを指定したサービス。しかし、データ取得時のエラーが動せず空のデータを取得した
         vm.libraryDataAcquisition = new ContentsErrorService(libraryId); //サービスの呼び出し
     }
     else{
-        vm.libraryDataAcquisition = new LibraryDataAcquisitionService(libraryId); //サービスの呼び出し
+        vm.libraryDataAcquisition = new LibraryDataAcquisitionService(libraryId); //ライブラリー画面のデータを取得するサービスの呼び出し
     }
     
     
@@ -55,41 +55,6 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
         //インジケータを非表示にする
         document.querySelector("#myModal").hide();
     });
-    
-    //ネットワークの接続を確認
-//     vm.checkConnection = function() {
-//         var networkState = navigator.connection.type;
-//     
-//         var states = {};
-//         states[Connection.UNKNOWN]  = '接続先が不明の回線';
-//         states[Connection.ETHERNET] = 'イーサネット';
-//         states[Connection.WIFI]     = 'WiFi';
-//         states[Connection.CELL_2G]  = '2G';
-//         states[Connection.CELL_3G]  = '3G';
-//         states[Connection.CELL_4G]  = '4G';
-//         states[Connection.CELL]     = 'Generic Cell';
-//         states[Connection.NONE]     = 'No network connection';
-// 
-//         
-// 
-//         if(networkState == Connection.NONE){
-//             ons.notification.alert({
-//                 title: '',
-//                 messageHTML: 'ネットワークに接続できません。接続を確認してください',
-//                 buttonLabel: 'OK',
-//                 callback: function(){
-//                     navi.popPage({animation:'slide'});
-//                 }
-//             });
-//         }
-//         else{
-//             ons.notification.alert({
-//                 title: '',
-//                 messageHTML: '現在は' + states[networkState] + 'に接続されています',
-//                 buttonLabel: 'OK'
-//             });
-//         }
-//     }
 
 }
 
@@ -97,17 +62,17 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
 
 //ContentsListCtrl
 function ContentsListCtrl(TransitionService){
-    var vm = this;
+    var vm = this;  //this コンテキストを、ViewModel を意味する vm として保持する
     this.libTransition = function(argument,argument2){
-        var contentsType = argument;
-        var contentsUrl = argument2;
+        var contentsType = argument;    //コンテンツの種別
+        var contentsUrl = argument2;    //コンテンツのURL
         if(contentsType == 'movie'){
             var target = 'views/html/movie.contents.html'; //遷移先のファイルパス
             vm.screenTransition = new TransitionService(target, contentsUrl); //サービスを呼び出す
         }
-        else{
+        else{   //今後PDFなどの種別ごとの処理を作成
             var target = 'views/html/contents.html'; //遷移先のファイルパス
-            this.screenTransition = new TransitionService(target, argument); //サービスを呼び出す
+            vm.screenTransition = new TransitionService(target, contentsUrl); //サービスを呼び出す
         }
   
     }
