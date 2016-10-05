@@ -2,11 +2,11 @@
 <ons-page modifier="lib" id="lib" ng-controller="LibraryCtrl as lib">
 
     <!-- ヘッダー領域 -->
-    <header id="LibraryHeader">
+    <header id="header">
         <!-- ナビゲーションバー -->
-        <ons-toolbar class="LibraryNavigationBar">
+        <ons-toolbar class="libraryNavigationBar">
             <div class="left">
-                <ons-back-button ng-click="navi.popPage({animation:'slide'})">Back</ons-back-button>
+                <ons-button class="backButton" modifier="backButton" ng-click="navi.popPage({animation:'slide'})"><b><</b><label>  Back</label></ons-button>
             </div>
             <div class="center"></div>
             <div class="right"></div>
@@ -14,17 +14,17 @@
     </header>
         
     <!-- ライブラリー概要領域 -->
-    <section id="LibraryOverviewArea">
+    <section id="libraryOverviewArea">
         
         <!-- タイトル画像 -->
-        <ons-row class="LibraryTitlePicture">
-            <img src="views/img/library/title_picture.png" alt="" />
+        <ons-row class="libraryTitlePicture">
+            <img ng-src="{{lib.libraryPicture}}" alt="" ng-cloak />
         </ons-row>
         
         <!-- 概要 -->
-        <ons-row class="LibraryOverview">
-            <label>
-                ここに概要を記載します。
+        <ons-row class="libraryOverview">
+            <label ng-cloak>
+                {{lib.libraryOverview}}<br>
             </label>
         </ons-row>
         
@@ -32,82 +32,47 @@
         
         
     <!-- コンテンツリスト領域 -->
-    <section id="LibraryContentsListArea" ng-controller="ContentsListCtrl as conlist">
+    <section id="libraryContentsListArea" ng-controller="ContentsListCtrl as conlist">
+        <div class="libraryContentsList">
         
-        <!-- コンテンツリスト -->
-        <div class="LibraryContentsList">
-                <!-- 1行目 -->
-                <ons-row>
+            <!-- リスト用の配列データがない場合に表示する -->
+            <label>{{lib.contentsDataNone}}</label>
+            
+            <!-- アイテムを1列ずつループ表示（奇数項目で偶数項目の要素も合わせて表示し、偶数項目のループでは要素を表示しない） -->
+            <!-- 要素が表示されないと終了判定が出来ないため、偶数項目の終了判定が出来なかった。そのため、今回はsectionを作成し偶数項目では空のsectionを出力することで見た目上の変化はなく対応した -->
+            <section ng-repeat="con in contentsList" repeat-finished-directive>
+                <ons-row ng-if="$even">
                     <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsA')">
+                    <!-- 左 -->
+                    <ons-col class="libraryContentsListItem" ng-click="conlist.libTransition(con.type,con.url)">
                         <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsA
+                            <img ng-src="{{con.img}}" alt="" />
+                            {{con.name}}
                         </ons-button>  
                     </ons-col>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsB')">
+                    
+                    <!-- 右 -->
+                    <!--奇数項目では最終ループの右項目が空のまま押下できてしまうため、押下できない空の項目を表示するよう対応した -->
+                    <ons-col class="libraryContentsListItem" ng-click="conlist.libTransition(contentsList[$index+1].type,contentsList[$index+1].url)" ng-if="$last!=true">
                         <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsB
+                            <img ng-src="{{contentsList[$index+1].img}}" alt="" />
+                            {{contentsList[$index+1].name}}
                         </ons-button>  
                     </ons-col>
+                    
+                    <ons-col class="libraryContentsListItem" ng-if="$last==true">
+                    
+                    </ons-col>
+    
                 </ons-row>
-                
-                <!-- 2行目 -->
-                <ons-row>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsC')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsC
-                        </ons-button>  
-                    </ons-col>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsD')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsD
-                        </ons-button>  
-                    </ons-col>
-                </ons-row>
-                
-                <!-- 3行目 -->
-                <ons-row>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsE')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsE
-                        </ons-button>
-                    </ons-col>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsF')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsF
-                        </ons-button>  
-                    </ons-col>
-                </ons-row>
-                
-                <!-- 4行目 -->
-                <ons-row>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsG')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsG
-                        </ons-button>  
-                    </ons-col>
-                    <!-- リストアイテム -->
-                    <ons-col class="LibraryContentsListItem" ng-click="conlist.libTransition('contentsH')">
-                        <ons-button modifier="LibBtn">
-                            <img src="views/img/library/contents_picture.png" alt="" />
-                            ContentsH
-                        </ons-button>  
-                    </ons-col>
-                </ons-row>
-
+            </section>
         </div>
     </section>
+    
+    <!-- インジケータ -->
+    <ons-modal id="myModal" var="modal">
+        <ons-progress-circular indeterminate></ons-progress-circular><br>
+    </ons-modal>
+    
+    
 </ons-page>

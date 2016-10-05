@@ -1,15 +1,15 @@
-ons.bootstrap('contentsModule', ['transitionModule']);
 
-//ContentsCtrl
-function ContentsCtrl(){
-    navi.on('postpush', function(event){ //pushPage完了後に動作
-        var param1 = null;  //変数の定義
-        param1 = navi.topPage.pushedOptions.data.param1; //カテゴリを代入
-        console.log(param1 + "がタップされました"); //値を受け取れたかの確認
-    });
+//PDF表示機能を追加するまで、動画以外の画面として作成
+
+function ContentsCtrl($scope,$sce,ConnectionService){
+    var vm = this;
+    vm.checkConnection = new ConnectionService();   //接続確認サービスの呼び出し
+    var param1 = navi.topPage.pushedOptions.data.param1; //受け取ったパラメータを代入
+    vm.url = $sce.trustAsResourceUrl(param1);   //URLに信頼済みのマークを付与
+    
 }
 
 //コントローラの定義
 angular
     .module('contentsModule')
-    .controller('ContentsCtrl', ContentsCtrl);
+    .controller('ContentsCtrl', ['$scope', '$sce', 'ConnectionService', ContentsCtrl]);

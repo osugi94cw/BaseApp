@@ -7,32 +7,25 @@
         background-color: #f8f8f8;
     }
     
-    /* ヘッダー領域 */
-    header#ContentsHeader{
-
-    }
-    
     
     
     /* コンテンツ領域 */
-    section#ContentsArea{
+    section#contentsArea{
         width: 100%;
-        height: 100%;
+        height: 90%;
         background-color: white;
     }
     div.blank{
-        height: 30%;
+        height: 22%;
         background-color: white;
     }
     
     /* コンテンツ */
-    .Contents{
-        height: 30%;
+    .contents{
+        height: 50%;
         text-align: center;
         background-color: #f8f8f8;
-        line-height: 10;
-
-        
+        line-height: 11;
     }
 }
 
@@ -47,27 +40,24 @@
         background-color: #f8f8f8;
     }
     
-    /* ヘッダー領域 */
-    header#ContentsHeader{
-
-    }
+    
     
     /* コンテンツ領域 */
-    section#ContentsArea{
+    section#contentsArea{
         width: 100%;
-        height: 100%;
+        height: calc(90% * 1.77);
+        background-color: white;
+    }
+    div.blank{
+        height: calc(27% * 1.77);
         background-color: white;
     }
     
-    .blank{
-        height: 30%;
-        background-color: white;
-    }
-    
-    .Contents{
-        height: 30%;
+    /* コンテンツ */
+    .contents{
+        height: calc(50% * 1.77);
         text-align: center;
         background-color: #f8f8f8;
-        line-height: 10;
+        line-height: 0;
     }
 }
