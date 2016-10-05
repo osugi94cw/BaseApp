@@ -1,10 +1,8 @@
 //モジュールの定義
 angular.module('connectionModule', []);
 
-//ConnectionService
 function ConnectionService(){
     
-    //ネットワークの接続を確認するメソッド
     var checkConnection = function() {
         var networkState = navigator.connection.type;
 
@@ -14,7 +12,7 @@ function ConnectionService(){
                 messageHTML: 'ネットワークに接続できません。接続を確認してください',
                 buttonLabel: 'OK',
                 callback: function(){
-                    navi.popPage({animation:'slide'});
+                    navi.popPage({animation:'slide'});  //OKをタップすると1つ前の画面に戻る
                 }
             });
         }

@@ -1,18 +1,15 @@
 //モジュールの定義
 angular.module('dataAcquisitionModule', []);
 
-//GetLibDataService
 function LibraryDataAcquisitionService($q,$rootScope){
     
-    //mBaaSからデータを取得するメソッド
     var libraryDataAcquisition = function(argument){
         var libraryId = argument; //ライブラリーIDを格納
        
        //mBaaSのAPIキーの設定とSDKの初期化
         var ncmb = new NCMB("340609a9b5431d19c497beb72411339fb9bd524570d8de15486d6557d07970ce","dda8edefd900294fcadc8d2914debad64dfb4aa7a26919e759a20e5cf3c5c609");
         
-        //NCMB.DataStoreのサブクラスを生成
-        //取得したデータの格納する配列を定義
+        //NCMB.DataStoreのサブクラスを生成/取得したデータを格納する配列を定義
         
         //libraryクラス
         var library = ncmb.DataStore("library");
@@ -26,7 +23,6 @@ function LibraryDataAcquisitionService($q,$rootScope){
         var contentsType = [];
         var contentsUrl = [];
         
-        //データの取得メソッド
         //IDが一致するレコードを作成日の降順で取得
         var libraryAcquisition = library.equalTo("libraryId", libraryId).order("createDate", true).fetchAll();
         var contentsListAcquisition = contentsList.equalTo("libraryId", libraryId).order("createDate", true).fetchAll();
@@ -38,7 +34,6 @@ function LibraryDataAcquisitionService($q,$rootScope){
         };
         
         //$q.all() メソッドによる複数 Promise オブジェクトの監視
-        //取得したデータを格納
         $q.all([libraryAcquisition, contentsListAcquisition])
         .then(function(results) {
             var libraryAcquisitionResults = results[0];
@@ -57,7 +52,7 @@ function LibraryDataAcquisitionService($q,$rootScope){
             };
             
             
-            //取得したデータをまとめる配列
+            //コンテンツリストのデータは配列に格納する
             data.contentsList = [];
             
             //コンテンツのデータを取得・格納
@@ -83,7 +78,7 @@ function LibraryDataAcquisitionService($q,$rootScope){
             //処理が終了したイベントを発火
             $rootScope.$broadcast('libraryDataGot', data);
         })
-        .catch(function(err){   //エラー処理
+        .catch(function(err){
             console.log(err);
             
             var networkState = navigator.connection.type;

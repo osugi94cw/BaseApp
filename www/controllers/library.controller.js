@@ -1,8 +1,6 @@
 //モジュールの定義
 ons.bootstrap('libraryModule', ['transitionModule','dataAcquisitionModule','connectionModule']);
 
-
-//LibraryCtrl
 function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,ContentsErrorService,ConnectionService){
     var vm = this; //this コンテキストを、ViewModel を意味する vm として保持する
     vm.checkConnection = new ConnectionService(); //接続確認サービスの呼び出し
@@ -10,10 +8,10 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
     document.querySelector("#myModal").show(); //インジケータを表示
     
     if(libraryId == "L006"){    //データ取得時のエラーが動作するよう、アプリケーションIDを存在しないものにしたサービス
-        vm.libraryDataAcquisition = new LibraryErrorService(libraryId); //サービスの呼び出し
+        vm.libraryDataAcquisition = new LibraryErrorService(libraryId);
     }
     else if(libraryId == "L007"){    //上記と同様にデータ取得時のエラーが動作するよう、存在しないクラスを指定したサービス。しかし、データ取得時のエラーが動せず空のデータを取得した
-        vm.libraryDataAcquisition = new ContentsErrorService(libraryId); //サービスの呼び出し
+        vm.libraryDataAcquisition = new ContentsErrorService(libraryId);
     }
     else{
         vm.libraryDataAcquisition = new LibraryDataAcquisitionService(libraryId); //ライブラリー画面のデータを取得するサービスの呼び出し
@@ -33,7 +31,6 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
         $scope.contentsList = [];   //vm.contentsListでは動作しなかった（要調査）
         $scope.contentsList = data.contentsList;
         
-        //データが登録されていない場合
         
         //コンテンツリストのデータが登録されていない場合
         if($scope.contentsList.length == 0){
@@ -52,15 +49,13 @@ function LibraryCtrl(LibraryDataAcquisitionService,$scope,LibraryErrorService,Co
     
     //ng-repeatが終了したイベントを受け取る
     $scope.$on('ngRepeatFinished', function(event) {
-        //インジケータを非表示にする
-        document.querySelector("#myModal").hide();
+        document.querySelector("#myModal").hide();  //インジケータを非表示にする
     });
 
 }
 
 
 
-//ContentsListCtrl
 function ContentsListCtrl(TransitionService){
     var vm = this;  //this コンテキストを、ViewModel を意味する vm として保持する
     this.libTransition = function(argument,argument2){

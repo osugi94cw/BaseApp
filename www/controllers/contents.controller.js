@@ -1,7 +1,6 @@
 
 //PDF表示機能を追加するまで、動画以外の画面として作成
 
-//ContentsCtrl
 function ContentsCtrl($scope,$sce,ConnectionService){
     var vm = this;
     vm.checkConnection = new ConnectionService();   //接続確認サービスの呼び出し

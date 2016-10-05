@@ -1,17 +1,17 @@
 //モジュールの作成
 angular.module('transitionModule', []);
 
-//TransitionService
 function TransitionService(){
     var screenTransition = function(argument1,argument2){
-        var target = argument1; //遷移先
+        var target = argument1;
         var options = {
-            animation:'fade',
-            data:{ //オブジェクトの定義
+            animation:'fade',   //遷移アニメーションの指定
+            //渡したいパラメータはdataオブジェクトに格納する
+            data:{
                 param1:argument2
             }
         };
-        navi.pushPage(target, options); //pushPageメソッド
+        navi.pushPage(target, options); //<ons-navigator>のpushPageメソッドを使用する
     };
     return screenTransition; 
 }
